@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class ControllerAdvice { //#3
+public class ControllerAdvice { 
     @ExceptionHandler(value = ApiException.class)
-    //every 400 here
+    
     public ResponseEntity ApiException(ApiException e){
         String message=e.getMessage();
         return ResponseEntity.status(400).body(message);
