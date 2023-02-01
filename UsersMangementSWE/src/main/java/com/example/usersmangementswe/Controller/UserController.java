@@ -74,7 +74,7 @@ public class UserController {
     @GetMapping("/checkUsernameAndPassword/{username}/{password}")
     public ResponseEntity getByUsernameAndPassword(@PathVariable String username,@PathVariable String password){
         User user=userService.findUserByUsernameAndPasswordAnd(username,password);
-        return ResponseEntity.status(200).body("User is exist");
+        return ResponseEntity.status(200).body(user);
 
     }
 }
