@@ -46,7 +46,7 @@ public class UserService {
         return true;
     }
     public User findUserByAge(Integer age){
-        //2 نجي هنا نسوي ميثود من نوع الاوبجكت ونرسل لها نفس الهيدر ونعرف متغير
+       
         User user=userRepository.findUserByAge(age);
         // if not found
         if(user==null){
@@ -54,7 +54,7 @@ public class UserService {
         }
         return user;
     }
-    //#2
+    
     //------------------------------------
     public User findUserByEmail(String email){
         User user=userRepository.findUserByEmail(email);
