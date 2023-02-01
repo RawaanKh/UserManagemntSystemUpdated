@@ -41,7 +41,7 @@ public class UserController {
             return ResponseEntity.status(200).body("user is updated ");
         }
        // return ResponseEntity.status(400).body("Id is not found");
-        // no more errors of 400
+        
             throw new ApiException("Id not Found");
     }
     @DeleteMapping("/delete/{id}")
@@ -56,12 +56,11 @@ public class UserController {
     }
     @GetMapping("/getByAge/{age}")
     public ResponseEntity getByAge(@PathVariable Integer age){
-        //  هنا رجعنا عرفناها
-        //insert = save (add in crud بالطريقه الطبيعيه)
+        
        List<User> user=userService.findUserByAgeGreaterThanEqual(age);
         return ResponseEntity.status(200).body(user);
     }
-    //#3
+    
     @GetMapping("/getByEmail/{email}")
     public ResponseEntity getByEmail(@PathVariable String email){
         User user=userService.findUserByEmail(email);
