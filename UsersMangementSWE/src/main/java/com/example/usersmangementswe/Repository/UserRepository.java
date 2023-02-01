@@ -8,13 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User,Integer> {
-    User findUserByAge(Integer age);
-
-   User findUserById(Integer id);
-   @Query("select u from  User u where u.id=?1")
-   User findMyid(Integer id);
-   
-
+  
     //-----------By username and password-----------
     User findUserByUsernameAndPasswordAnd(String username,String password);
     //------------find by email-------------------------
@@ -32,6 +26,10 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
     //@Query("SELECT u from User u where u.role='admin'or u.role='user'")
     // List<User> findUserRole(String role);
+   // User findUserByAge(Integer age);
 
+   User findUserById(Integer id);
+   @Query("select u from  User u where u.id=?1")
+   User findMyid(Integer id);
 
 }
