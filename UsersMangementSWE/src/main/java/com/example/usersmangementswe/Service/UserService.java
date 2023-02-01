@@ -45,15 +45,7 @@ public class UserService {
         userRepository.delete(user);
         return true;
     }
-    public User findUserByAge(Integer age){
-       
-        User user=userRepository.findUserByAge(age);
-        // if not found
-        if(user==null){
-            throw new ApiException("age not found");
-        }
-        return user;
-    }
+   
     
     //------------------------------------
     public User findUserByEmail(String email){
@@ -72,17 +64,27 @@ public class UserService {
     }
     public  List<User> findUserByAgeGreaterThanEqual(Integer age){
         List<User> users = userRepository.findUserByAgeGreaterThanEqual(age);
-        if (users.isEmpty()){
+        if (users==null){
             throw new ApiException("age not found");
         }
         return users;
     }
     public List<User> findAllByRole(String role){
         List<User> users = userRepository.findAllByRole(role);
-        if (users.isEmpty()){
+        if (users==null){
             throw new ApiException("role not found");
         }
         return users;
+    }
+    // extra
+     public User findUserByAge(Integer age){
+       
+        User user=userRepository.findUserByAge(age);
+        // if not found
+        if(user==null){
+            throw new ApiException("age not found");
+        }
+        return user;
     }
 
 
