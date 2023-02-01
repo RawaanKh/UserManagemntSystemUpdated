@@ -9,13 +9,11 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User,Integer> {
     User findUserByAge(Integer age);
-// اقدر ارجع اي شي ابيه بس ارسله في الهيدر
-//rest controller no 400 erroro noly 200
+
    User findUserById(Integer id);
    @Query("select u from  User u where u.id=?1")
    User findMyid(Integer id);
-   // هذي الطريقه نفس اللي فوق بس تنفع للي يعرفون sql مره
-    //#1
+   
 
     //-----------By username and password-----------
     User findUserByUsernameAndPasswordAnd(String username,String password);
